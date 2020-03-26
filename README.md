@@ -20,7 +20,7 @@ load.sh 全局加载文件, 只需要在`/etc/profile.d/`添加该文件
 
 | 文件| 作用|
 | :-- | :-- |
-|load.sh| 配置加载文件，将该文件让`profile`加载即可，修改其中的`c_path`变量为`jie.profile/profile.d`的绝对地址|
+|load.sh| 配置加载文件，将该文件让`profile`加载即可，修改其中的`c_path`变量为`${jie.profile.home}/profile.d`的绝对地址|
 |init.sh| 配置PS1、$LANG的初始化|
 |git.sh | git分支状态在提示符显示的配置 `[root@localhost jie.profile git:(master)] $`|
 
