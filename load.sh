@@ -1,25 +1,9 @@
-PRG="$0"
-# Need this for relative symlinks.
-while [ -h "$PRG" ] ; do
-    ls=`ls -ld "$PRG"`
-    link=`expr "$ls" : '.*-> \(.*\)$'`
-    if expr "$link" : '/.*' > /dev/null; then
-        PRG="$link"
-    else
-        PRG=`dirname "$PRG"`"/$link"
-    fi
-done
-SAVED="`pwd`"
-cd "`dirname \"$PRG\"`/" >/dev/null
-APP_HOME="`pwd -P`"
-cd "$SAVED" >/dev/null
+APP_HOME=/usr/local/jie.profile/profile.d/
 
-c_path=$APP_HOME
-
-if [ -d $c_path ]; then
-  for i in ${c_path}/*.sh; do
+if [ -d $APP_HOME ]; then
+  for i in ${APP_HOME}/*.sh; do
     if [ -r $i ]; then
-      . $i
+      . $i ${APP_HOME}
     fi
   done
   unset i
